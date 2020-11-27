@@ -7,8 +7,11 @@ nextSlide.click(function(){
     // attiva alla prima immagine e aggiungerla 
     // alla seconda e cosi via.
 
-    $("img.active.first").removeClass("active");
-    $("img.active:nth-child(2)").addClass("active");
+    $(".active").removeClass("active");
+    $("img:nth-child(2)").addClass("active");
+    /* $("img:nth-child(2)").removeClass("active");
+    $("img:nth-child(3)").addClass("active"); */
+    
 });
 
 prevSlide.click(function () {
@@ -19,4 +22,9 @@ prevSlide.click(function () {
 
     /* $("img.active.first").removeClass("active");
     $(".last").addClass("active"); */
+    
 });
+
+
+
+    
