@@ -10,7 +10,6 @@ nextSlide.click(function(){
 
     var immagineCorrente = $("img.active");
     var immagineSuccessiva = immagineCorrente.next();
-    var immaginePrecedente = immagineCorrente.prev();
     var primaImmagine = $("img.first");
     var ultimaImmagine = $("img.last");
     
@@ -57,7 +56,18 @@ prevSlide.click(function () {
     // attiva alla prima immagine e aggiungerla 
     // alla seconda e cosi via.
 
-    
+    var immagineCorrente = $("img.active");
+    var immaginePrecedente = immagineCorrente.prev();
+    var primaImmagine = $("img.first");
+    var ultimaImmagine = $("img.last");
+
+    if (immagineCorrente.hasClass("active") && immagineCorrente.hasClass("first")) {
+        primaImmagine.removeClass("active");
+        ultimaImmagine.addClass("active");
+    } else {
+        immagineCorrente.removeClass("active");
+        immaginePrecedente.addClass("active");
+    }
 
     /* $("img.active.first").removeClass("active");
     $(".last").addClass("active"); */
